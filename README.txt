@@ -1,0 +1,1 @@
+Project files:\n1. index.html - open this file in a browser to view the website.\n2. design_explanation.docx - one-page explanation of the design.\n\nNote: check the five glossary words against the glossary from your course. If your teacher gave a specific glossary, replace these words if needed.\n

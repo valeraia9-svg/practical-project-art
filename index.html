@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art and Hobbies</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f3ee;
+            color: #302d2a;
+        }
+
+        header {
+            background-color: #574b90;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        header p {
+            margin-bottom: 0;
+        }
+
+        nav {
+            background-color: #39315f;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        main {
+            width: 85%;
+            max-width: 1000px;
+            margin: 25px auto;
+        }
+
+        h2 {
+            color: #574b90;
+        }
+
+        .intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            margin: 15px 0;
+        }
+
+        button {
+            background-color: #7568ad;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #39315f;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1 1 230px;
+            box-sizing: border-box;
+        }
+
+        .picture {
+            height: 120px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px;
+            background-color: #e9e2f5;
+        }
+
+        .card h3 {
+            color: #574b90;
+        }
+
+        .more-info {
+            display: none;
+            background-color: #eee9f8;
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        footer {
+            background-color: #39315f;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                width: 92%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Art and Hobbies</h1>
+        <p>Find inspiration and discover something new!</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#benefits">Benefits</a>
+    </nav>
+
+    <main>
+        <section class="intro" id="about">
+            <h2>What are art and hobbies?</h2>
+            <p>
+                Art is a way to show ideas, feelings and creativity.
+                A hobby is an activity that people enjoy in their free time.
+                Art can become a hobby and help people learn new skills.
+            </p>
+        </section>
+
+        <section id="activities">
+            <h2>Choose an activity</h2>
+            <p>Use the buttons to find different types of art and hobbies.</p>
+
+            <div class="buttons">
+                <button onclick="showAll()">All</button>
+                <button onclick="filterCards('art')">Art</button>
+                <button onclick="filterCards('music')">Music</button>
+                <button onclick="filterCards('other')">Other hobbies</button>
+            </div>
+
+            <div class="gallery">
+                <div class="card" data-type="art">
+                    <div class="picture">🎨</div>
+                    <h3>Painting</h3>
+                    <p>Painting is the process of making pictures with colours.</p>
+                    <button onclick="showInfo('painting')">Learn more</button>
+                    <p class="more-info" id="painting">
+                        You can use watercolours, acrylic paints or pencils.
+                        Painting develops imagination and creativity.
+                    </p>
+                </div>
+
+                <div class="card" data-type="art">
+                    <div class="picture">📷</div>
+                    <h3>Photography</h3>
+                    <p>Photography helps us capture interesting moments.</p>
+                    <button onclick="showInfo('photo')">Learn more</button>
+                    <p class="more-info" id="photo">
+                        A good photo can tell a story. You can start with
+                        a phone camera and practise composition.
+                    </p>
+                </div>
+
+                <div class="card" data-type="music">
+                    <div class="picture">🎸</div>
+                    <h3>Music</h3>
+                    <p>Music includes singing and playing instruments.</p>
+                    <button onclick="showInfo('music')">Learn more</button>
+                    <p class="more-info" id="music">
+                        Learning an instrument takes practice. It can also
+                        improve concentration and listening skills.
+                    </p>
+                </div>
+
+                <div class="card" data-type="other">
+                    <div class="picture">🧶</div>
+                    <h3>Knitting</h3>
+                    <p>Knitting is a creative hobby that uses yarn and needles.</p>
+                    <button onclick="showInfo('knitting')">Learn more</button>
+                    <p class="more-info" id="knitting">
+                        People make scarves, hats and other useful things.
+                        It is a good way to practise patience.
+                    </p>
+                </div>
+
+                <div class="card" data-type="other">
+                    <div class="picture">📚</div>
+                    <h3>Reading</h3>
+                    <p>Reading lets us explore new stories and ideas.</p>
+                    <button onclick="showInfo('reading')">Learn more</button>
+                    <p class="more-info" id="reading">
+                        Books can teach us about different people, places
+                        and cultures.
+                    </p>
+                </div>
+
+                <div class="card" data-type="art">
+                    <div class="picture">🗿</div>
+                    <h3>Sculpture</h3>
+                    <p>Sculpture is the art of making three-dimensional objects.</p>
+                    <button onclick="showInfo('sculpture')">Learn more</button>
+                    <p class="more-info" id="sculpture">
+                        Artists can work with clay, wood, stone or other materials.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro" id="benefits">
+            <h2>Why are hobbies important?</h2>
+            <ul>
+                <li>They help us relax after studying or working.</li>
+                <li>They develop creativity and imagination.</li>
+                <li>They help us learn useful skills.</li>
+                <li>They give us a chance to meet people with similar interests.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Art and Hobbies | Find time for creativity!</p>
+    </footer>
+
+    <script>
+        function filterCards(type) {
+            let cards = document.querySelectorAll('.card');
+
+            cards.forEach(function(card) {
+                if (card.dataset.type === type) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function showAll() {
+            let cards = document.querySelectorAll('.card');
+
+            cards.forEach(function(card) {
+                card.style.display = 'block';
+            });
+        }
+
+        function showInfo(id) {
+            let info = document.getElementById(id);
+
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
